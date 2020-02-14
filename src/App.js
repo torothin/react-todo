@@ -1,6 +1,7 @@
 import React from 'react';
 import Todos from './components/Todos/todos.component';
-
+import Header from './components/Header/header.component';
+import AddTodo from './components/Add-Todo/add-todo.component';
 import './App.css';
 
 class App extends React.Component {
@@ -42,10 +43,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Todos 
-          todos={ this.state.todos } 
-          markComplete={this.markComplete}
-          deleteTodo={this.deleteTodo} />
+        <div className='container'>
+          <Header />
+          <AddTodo />
+          <Todos 
+            todos={ this.state.todos } 
+            markComplete={this.markComplete}
+            deleteTodo={this.deleteTodo} />
+            
+          </div>
       </div>
     )
   }
